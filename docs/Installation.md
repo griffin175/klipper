@@ -31,7 +31,7 @@ is "raspberry") and run the following commands:
 
 ```
 git clone https://github.com/Klipper3d/klipper
-./klipper/scripts/install-octopi.sh
+./klipper/scripts/install-octopi.sh --allow-releaseinfo-change
 ```
 
 The above will download Klipper, install some system dependencies,
@@ -76,6 +76,10 @@ possible there may be multiple lines in the above output - if so,
 choose the line corresponding to the micro-controller (see the
 [FAQ](FAQ.md#wheres-my-serial-port) for more information).
 
+When flashing for the first time, make sure that OctoPrint is not
+connected directly to the printer (from the OctoPrint web page, under
+the "Connection" section, click "Disconnect").
+
 For common micro-controllers, the code can be flashed with something
 similar to:
 
@@ -87,10 +91,6 @@ sudo service klipper start
 
 Be sure to update the FLASH_DEVICE with the printer's unique serial
 port name.
-
-When flashing for the first time, make sure that OctoPrint is not
-connected directly to the printer (from the OctoPrint web page, under
-the "Connection" section, click "Disconnect").
 
 ## Configuring OctoPrint to use Klipper
 
